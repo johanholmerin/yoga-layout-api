@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+
+  <style>
+    /* Yoga default values */
+    * {
+      box-sizing: border-box;
+      position: relative;
+      flex-direction: column;
+      align-items: stretch;
+      flex-shrink: 0;
+      align-content: flex-start;
+      align-self: auto;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    main {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      display: layout(yoga);
+      /*align-items: center;*/
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    div {
+      height: 100px;
+      flex-basis: 100px;
+      width: 80px;
+      margin: 20px;
+      padding: 8px;
+      background: #ccc;
+    }
+
+    div:nth-child(3) {
+      align-self: flex-end;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+  </main>
+
+  <script>
+    if ('layoutWorklet' in CSS) {
+      CSS.layoutWorklet.addModule('yoga.js');
+    }
+  </script>
+</body>
+</html>
